@@ -14,7 +14,7 @@ Afterwards, the client-object can be used until the session is expired.
 
 ## Usage
 
-[uml]: http://www.plantuml.com/plantuml/uml/VP1D2i8m48NtEKMM_b0F44IgNOZWJYyGqg4EJISbCnL4lBknBRLkt6M-lFVc9JcBZT8rNZblcNKHkiZmL6kDfT4dadGYsu3H5ub8LHhT3LmDwVOGWWTBwgL6ypMqwFvwIs0NiHKCDAFM2TvH4DZeCx9iznFOVTD7-FXTu97gAIffXmVeLPODTOm-feLSU0IIJGNIquNhPKlLJn_r56zcTLGELARFUGC0 "UML Diagram"
+![uml](http://www.plantuml.com/plantuml/png/VP1D2i8m48NtEKMM_b0F44IgNOZWJYyGqg4EJISbCnL4lBknBRLkt6M-lFVc9JcBZT8rNZblcNKHkiZmL6kDfT4dadGYsu3H5ub8LHhT3LmDwVOGWWTBwgL6ypMqwFvwIs0NiHKCDAFM2TvH4DZeCx9iznFOVTD7-FXTu97gAIffXmVeLPODTOm-feLSU0IIJGNIquNhPKlLJn_r56zcTLGELARFUGC0)
 
 The Data-Layer follows an hierarchical approach. The Courses can be requested by ``GripsClient.getCourses()``. Courses consist of 0 to n topic. For performance/bandwith reasons, the topics are not downloaded automatically. To get all topics of a course, ``GripsClient.getTopics(course: Course)`` can be invoked.
 A topic can have 0 to n activities. Activities are for now just files.
