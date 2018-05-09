@@ -27,5 +27,8 @@ Example: To get a list of all activities available to an account, we need to ``f
             .collect(Collectors.toList())
 ```
 
+## Used Libraries
+- [jsoup](https://jsoup.org/) - MIT License
+
 ## Disclaimer
 This project is in no way affiliated with [OTH Regensburg](https://oth-regensburg.de) and/or  [Universität Regensburg](http://www.uni-regensburg.de/). The code is only accessing information, that is already publicly available at [G.R.I.P.S](https://elearning.uni-regensburg.de) 
