@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.41'
+    ext.kotlin_version = '1.2.71'
 
     repositories {
         mavenCentral()
@@ -21,8 +21,14 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile group: 'org.jsoup', name: 'jsoup', version: '1.8.3'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+    dependencies {
+        testCompile 'io.kotlintest:kotlintest-runner-junit5:3.1.7'
+    }
+}
 
+test {
+    useJUnitPlatform()
 }
 
 publishing {
