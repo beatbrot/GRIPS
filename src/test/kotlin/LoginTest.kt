@@ -2,9 +2,7 @@ import de.beatbrot.grips.GripsClient
 import de.beatbrot.grips.model.LoginData
 import de.beatbrot.grips.model.Realm
 import io.kotlintest.*
-import io.kotlintest.extensions.SpecLevelExtension
-import io.kotlintest.extensions.TagExtension
-import io.kotlintest.extensions.TestListener
+import io.kotlintest.matchers.string.beEmpty
 import io.kotlintest.specs.StringSpec
 import java.lang.IllegalArgumentException
 
@@ -31,10 +29,9 @@ class LoginTest : StringSpec({
     }
 
     "Logging in with the real username should succeed".config(enabled = hasLoginData()) {
-        println(System.getenv())
-        realm shouldNotBe null
-        username shouldNotBe null
-        password shouldNotBe null
+        realm shouldNot beEmpty()
+        username shouldNot beEmpty()
+        password shouldNot beEmpty()
 
         val realObj = Realm.valueOf(realm.toUpperCase())
         val loginData = LoginData(realObj, username, password)
@@ -50,5 +47,5 @@ fun hasLoginData(): Boolean {
     val user = env["GRIPS_USER"]
     val pw = env["GRIPS_PW"]
 
-    return !(realm == null || user == null || pw == null)
+    return !(realm.isNullOrEmpty() || user.isNullOrEmpty() || pw.isNullOrBlank())
 }

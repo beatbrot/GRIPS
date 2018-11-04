@@ -28,6 +28,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    environment "GRIPS_REALM", gripsRealm
+    environment "GRIPS_USER", gripsUser
+    environment "GRIPS_PW", gripsPW
 }
 
 publishing {
