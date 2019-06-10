@@ -9,7 +9,6 @@ pool:
 steps:
 - task: Gradle@2
   inputs:
-    options: '-PgripsRealm=$(gripsRealm) -PgripsUser=$(gripsUser) -PgripsPW=$(gripsPW)'
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
     gradleOptions: '-Xmx3072m'
