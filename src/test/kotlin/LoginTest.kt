@@ -1,7 +1,8 @@
+import de.beatbrot.grips.GripsClient
 import de.beatbrot.grips.model.LoginData
 import de.beatbrot.grips.model.Realm
+import io.kotlintest.shouldNotBe
 import io.kotlintest.shouldThrow
-import io.kotlintest.shouldThrowAny
 import io.kotlintest.specs.StringSpec
 
 class LoginTest : StringSpec({
@@ -13,16 +14,8 @@ class LoginTest : StringSpec({
     val fooBarLogin = LoginData(Realm.HS, "foo", "bar")
 
     "Logging in with wrong credentials should fail" {
-        val client = GripsClient(fooBarLogin)
         shouldThrow<IllegalArgumentException> {
-            client.login()
-        }
-    }
-
-    "Using GripsClient-object without logging in should fail" {
-        val client = GripsClient(fooBarLogin)
-        shouldThrowAny {
-            client.createModel()
+            GripsClient.create(fooBarLogin)
         }
     }
 
@@ -30,8 +23,8 @@ class LoginTest : StringSpec({
         val realObj = Realm.valueOf(realm.toUpperCase())
         val loginData = LoginData(realObj, username, password)
 
-        val client = GripsClient(loginData)
-        client.login()
+        val client = GripsClient.create(loginData)
+        client.sessionId shouldNotBe ""
     }
 })
 

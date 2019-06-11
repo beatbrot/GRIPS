@@ -18,7 +18,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jsoup", "jsoup", "1.12.1")
 
-    testCompile("io.kotlintest", "kotlintest-runner-junit5", "3.3.2")
+    testImplementation("io.kotlintest", "kotlintest-runner-junit5", "3.3.2")
 }
 
 tasks.withType<Test> {

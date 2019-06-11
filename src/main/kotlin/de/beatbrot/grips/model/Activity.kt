@@ -1,4 +1,4 @@
-package de.beatbrot.grips.model.activity
+package de.beatbrot.grips.model
 
 sealed class Activity {
     abstract val id: Int
@@ -10,6 +10,6 @@ sealed class Activity {
 
 data class BaseActivity(override val id: Int, override val name: String) : Activity()
 
-data class DownloadActivity(override val id: Int, override val name: String) : Activity()
+data class DownloadActivity(override val id: Int, override val name: String, override val link: String) : Activity()
 
 data class UrlActivity(override val id: Int, override val name: String, override val link: String) : Activity()
